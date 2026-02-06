@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libérez Maria Kolesnikova - FDDS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: white;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 150px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004d40;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 4em;
+            font-family: 'Lobster', cursive;
+        }
+        .scrolling-text {
+            width: 100%;
+            background-color: red;
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        .scrolling-text p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 30s linear infinite;
+            font-size: 1.2em;
+            margin: 0;
+        }
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .petition {
+            background: url('Maria.png') no-repeat center center/cover;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            border-radius: 8px;
+        }
+        .petition h2 {
+            margin-bottom: 20px;
+        }
+        .petition .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .petition button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .petition button:hover {
+            background-color: #004d40;
+        }
+        .petition a {
+            text-decoration: none;
+            color: white;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: #004d40;
+        }
+
+        /* À propos de la FDDS */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        #about img {
+            width: 45%;
+            border-radius: 8px;
+        }
+
+        #about .text {
+            width: 50%;
+        }
+
+        #about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #004d40;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+            font-family: 'Helvetica', Arial, sans-serif; /* Police idéale pour la description */
+        }
+
+        /* Notre Équipe */
+        #team .team-overview {
+            background-color: #c62828; /* Rouge */
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        #team .team-overview h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: yellow; /* Jaune pour le titre */
+        }
+
+        #team .team-overview p {
+            font-size: 1.2em;
+            color: yellow; /* Jaune pour la description */
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .team-member img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+        }
+
+        .team-member-text {
+            flex: 1;
+            text-align: justify;
+        }
+
+        .team-member-text h3 {
+            font-size: 1.8em;
+            color: #004d40;
+            margin-bottom: 15px;
+        }
+
+        .team-member-text p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Inverse the order for specific team members */
+        #team .team-member:nth-child(2) {
+            flex-direction: row-reverse;
+        }
+
+        #team .team-member:nth-child(3) {
+            flex-direction: row-reverse;
+        }
+
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+
+        /* Contact section */
+        #contact {
+            background-color: #ffffff;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #004d40;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .contact-form button:hover {
+            background-color: #004d40;
+        }
+		
+		/* Style pour la section des projets */
+        #projects .project {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Style pour le texte dans chaque projet */
+        .project-text {
+            flex: 1;
+            text-align: justify;
+        }
+
+        .project-text h3 {
+            font-size: 1.8em;
+            color: #004d40;
+            margin-bottom: 15px;
+        }
+
+        .project-text p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Style pour l'image dans chaque projet */
+        .project-image {
+            flex: 0 0 40%;
+        }
+
+        .project-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Pour inverser l'ordre dans la deuxième section (Portes à Portes) */
+        #projects .project:nth-child(2) {
+            flex-direction: row-reverse;
+        }
+		/* Pour inverser l'ordre dans la deuxième section (Portes à Portes) */
+        #projects .project:nth-child(3) {
+            flex-direction: reverse;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="FDDS-Logo.png" alt="FDDS Logo">
+    </header>
+
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#team">Équipe</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Liberté pour Maria Kolesnikova</h1>
+            <div class="scrolling-text">
+                <p>Joignez-vous à nous pour demander la libération immédiate de Maria Kolesnikova, militante des droits humains injustement détenue. Joignez-vous à nous pour demander la libération immédiate de Maria Kolesnikova, militante des droits humains injustement détenue.</p>
+            </div>
+        </div>
+
+        <div class="petition">
+            <h2>Signez la pétition</h2>
+            <p class="quote">Libérez Maria pour le bien de tous. Chaque voix compte.</p>
+            <button onclick="window.location.href='Formulaire de signature';">Signer la pétition</button>
+        </div>
+
+        <section id="about" class="section">
+            <img src="drapeau FDDS.png" alt="À propos de la FDDS">
+            <div class="text">
+                <h2>À propos de la FDDS</h2>
+                <p>La Fondation de Défense des Démocraties Soviétiques (FDDS) est une organisation dédiée à la protection des démocraties issues de l'ancien espace soviétique. Nous œuvrons pour la défense des droits fondamentaux dans la region post URSS et soutenons des initiatives comme la libération de Maria Kolesnikova, une militante courageuse injustement emprisonnée. À travers des campagnes médiatiques et des actions concrètes, nous cherchons à promouvoir la liberté et la justice pour tous.</p>
+            </div>
+        </section>
+		
+		<!-- Nos Projets -->
+        <section id="projects" class="section">
+            <h2>Nos Projets</h2>
+            
+            <!-- Première Partie - Manifestation -->
+            <div class="project">
+                <div class="project-text">
+                    <h3>Manifestation</h3>
+                    <p>Nous menons des manifestations un peu partout en Allemagne pour la libération de prisonniers politiques.</p>
+                </div>
+                <div class="project-image">
+                    <img src="Manif_FDDS.png" alt="Manifestation" />
+                </div>
+            </div>
+            
+            <!-- Deuxième Partie - Portes à Portes -->
+            <div class="project">
+                <div class="project-text">
+                    <h3>Porte à Porte</h3>
+                    <p>Nous menons des actions de sensibilisation par du porte-à-porte notamment en Allemagne et en Biélorussie pour mobiliser les citoyens à manifester et à signer la pétition qui exige la liberation de Maria.</p>
+                </div>
+                <div class="project-image">
+                    <img src="pap FDDS.png" alt="Portes à Portes" />
+                </div>
+            </div>
+            
+            <!-- Troisième Partie - Collaboration avec des ONG -->
+            <div class="project">
+                <div class="project-text">
+                    <h3>Collaboration avec des ONG internationales et des partis politiques</h3>
+                    <p>Nous collaborons avec des ONG internationales comme "Amnesty International" et des partis politiques situé à gauche politiquement pour travailler ensemble afin de réussir à libérer Maria Kolesnikova.</p>
+                </div>
+                <div class="project-image">
+                    <img src="collab FDDS.png" alt="Collaboration avec des ONG" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre Équipe -->
+        <section id="team">
+            <div class="team-overview">
+                <h2>Notre Équipe</h2>
+                <p>L'équipe de la FDDS est unie, déterminée et prête à agir pour la libération de Maria Kolesnikova. Nous agissons ensemble pour faire entendre notre voix dans cette lutte pour la justice et la liberté. Les quatre fondateurs sont les piliers de notre organisation, chacun ayant un rôle spécifique pour faire avancer notre cause.</p>
+            </div>
+
+            <!-- Gabriel -->
+            <div class="team-member">
+                <div class="team-member-text">
+                    <h3>Gabriel</h3>
+                    <p>Gabriel a un rôle clé dans la prise de décisions stratégiques. Il gère l'ensemble de l'organisation en faisant des choix importants pour la réussite de nos projets et la libération de Maria Kolesnikova.</p>
+                </div>
+                <div class="team-member-image">
+                    <img src="gabriel.png" alt="Gabriel">
+                </div>
+            </div>
+
+            <!-- Ahmed -->
+            <div class="team-member">
+                <div class="team-member-text">
+                    <h3>Ahmed</h3>
+                    <p>Ahmed, chargé de la sécurite et de l'organisation de nos actions. Il s'assure que chaque événement est bien organisé et que les ressources nécessaires sont disponibles pour maximiser l'impact de nos actions.</p>
+                </div>
+                <div class="team-member-image">
+                    <img src="ahmed.png" alt="Ahmed">
+                </div>
+            </div>
+
+            <!-- JeanMartin -->
+            <div class="team-member">
+                <div class="team-member-text">
+                    <h3>JeanMartin</h3>
+                    <p>JeanMartin, responsable de la gestion des réseaux sociaux. Il supervise la présence de la FDDS et veille à ce que notre message atteigne un public mondial. Il utilise les réseaux pour sensibiliser et mobiliser les citoyens en faveur de la libération de Maria.</p>
+                </div>
+                <div class="team-member-image">
+                    <img src="JM.png" alt="JeanMartin">
+                </div>
+            </div>
+
+            <!-- Joseph -->
+            <div class="team-member">
+                <div class="team-member-text">
+                    <h3>Joseph</h3>
+                    <p>Joseph gère  les négociations politiques et les stratégies de communication avec les institutions internationales. Grâce à son expertise, il joue un rôle crucial dans la coordination de nos actions au niveau mondial.</p>
+                </div>
+                <div class="team-member-image">
+                    <img src="joseph.png" alt="Joseph">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contactez-nous -->
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FDDS - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
